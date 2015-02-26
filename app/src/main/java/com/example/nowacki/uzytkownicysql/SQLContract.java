@@ -13,5 +13,6 @@ public class SQLContract {
         public static final String COLUMN_NAME_ID="_id";
         public static final String COLUMN_NAME_NAZWA="nazwa";
         public static final String COLUMN_NAME_HASLO="haslo";
+        public static final String DATABASE_NAME="moja_baza";
     }
 }

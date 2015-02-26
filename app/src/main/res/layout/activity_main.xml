@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:text="Zarejestruj"
         android:id="@+id/btZarejestruj"
-        android:layout_below="@id/btZaloguj"/>
+        android:layout_below="@id/btZaloguj"
+        android:onClick="ClickRejestruj"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
