@@ -10,8 +10,8 @@ import android.util.Log;
  * Created by Nowacki on 2015-02-26.
  */
 public class SQLOperacje extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 1;
-    public String CREATE_QUERY ="CREATE TABLE "+ SQLContract.SQLDane.TABLE_NAME+"("+
+    public static final int DATABASE_VERSION = 2;
+    public String CREATE_QUERY ="CREATE TABLE " + SQLContract.SQLDane.TABLE_NAME+"("+ SQLContract.SQLDane.COLUMN_NAME_ID +" integer primary key autoincrement, "+
             SQLContract.SQLDane.COLUMN_NAME_NAZWA+" TEXT,"+ SQLContract.SQLDane.COLUMN_NAME_HASLO+
             " TEXT"+");";
 

@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:text="Zaloguj"
         android:id="@+id/btZaloguj"
-        android:layout_below="@id/textMenu"/>
+        android:layout_below="@id/textMenu"
+        android:onClick="ClickZaloguj"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Lista Użytkowników"
         android:id="@+id/btLista"
-        android:layout_below="@id/btUsun"/>
+        android:layout_below="@id/btUsun"
+        android:onClick="ClickLista"/>
 
 </RelativeLayout>

@@ -12,13 +12,6 @@
         android:text="Logowanie"
         android:id="@+id/textLogowanie"
         android:textSize="50sp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zaloguj"
-        android:id="@+id/btZaloguj"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editHaslo"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,4 +24,12 @@
         android:hint="Hasło"
         android:id="@+id/editHaslo"
         android:layout_below="@id/editNazwa"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zaloguj"
+        android:id="@+id/btZaloguj"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editHaslo"
+        android:onClick="ClickLoguj"/>
 </RelativeLayout>
