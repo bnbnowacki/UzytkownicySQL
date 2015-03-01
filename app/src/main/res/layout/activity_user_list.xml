@@ -6,17 +6,10 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.nowacki.uzytkownicysql.UserListActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lista Użytkowników"
-        android:id="@+id/textNaglowek"
-        android:textSize="35sp"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textLista"
-        android:layout_below="@id/textNaglowek"/>
+        android:id="@+id/viewUsers">
+    </ListView>
 
 </RelativeLayout>

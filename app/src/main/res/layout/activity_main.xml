@@ -31,13 +31,15 @@
         android:layout_height="wrap_content"
         android:text="Zmień hasło"
         android:id="@+id/btZmien"
-        android:layout_below="@id/btZarejestruj"/>
+        android:layout_below="@id/btZarejestruj"
+        android:onClick="ClickZmiana"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Usuń Użytkownika"
         android:id="@+id/btUsun"
-        android:layout_below="@id/btZmien"/>
+        android:layout_below="@id/btZmien"
+        android:onClick="ClickUsun_Main"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

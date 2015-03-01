@@ -6,4 +6,6 @@
     <string name="title_activity_registration">RegistrationActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_user_list">UserListActivity</string>
+    <string name="title_activity_change_pass">ChangePassActivity</string>
+    <string name="title_activity_delete">DeleteActivity</string>
 </resources>

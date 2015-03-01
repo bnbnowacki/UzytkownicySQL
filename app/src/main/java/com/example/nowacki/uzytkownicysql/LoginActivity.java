@@ -52,21 +52,24 @@ public class LoginActivity extends ActionBarActivity {
         boolean loginStatus = false;
         String textLogin = login.getText().toString();
         String textPass = haslo.getText().toString();
+        String where= SQLContract.SQLDane.COLUMN_NAME_NAZWA+" = ?";
+        String[] whereArgs={textLogin};
         String nazwa="";
         String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_NAZWA, SQLContract.SQLDane.COLUMN_NAME_HASLO};
-        Cursor c = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, null, null, null, null, null);
+        Cursor c = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, where, whereArgs, null, null, null);
         c.moveToFirst();
-        do{
-            if(textLogin.equals(c.getString(0))&& textPass.equals(c.getString(1))){
-                loginStatus = true;
-                nazwa = c.getString(0);
-            }
-        }while(c.moveToNext());
+        if(textPass.equals(c.getString(1))){
+            loginStatus = true;
+            nazwa = c.getString(0);
+        }
         if(loginStatus==true){
             Toast.makeText(getApplicationContext(), "Gratulacje! Zalogowałeś się jako: "+nazwa, Toast.LENGTH_SHORT).show();
+            SQLContract.zalogowany=nazwa;
+            finish();
 
         }else{
             Toast.makeText(getApplicationContext(),"Sorry, błędne hasło lub nazwa...", Toast.LENGTH_SHORT).show();
+            haslo.setText("");
         }
     }
 }

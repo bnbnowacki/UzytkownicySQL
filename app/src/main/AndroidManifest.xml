@@ -28,6 +28,14 @@
             android:name=".UserListActivity"
             android:label="@string/title_activity_user_list" >
         </activity>
+        <activity
+            android:name=".ChangePassActivity"
+            android:label="@string/title_activity_change_pass" >
+        </activity>
+        <activity
+            android:name=".DeleteActivity"
+            android:label="@string/title_activity_delete" >
+        </activity>
     </application>
 
 </manifest>

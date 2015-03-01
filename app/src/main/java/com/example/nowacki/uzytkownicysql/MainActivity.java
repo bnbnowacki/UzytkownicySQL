@@ -53,4 +53,14 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
+
+    public void ClickZmiana(View view) {
+        Intent intent = new Intent(MainActivity.this, ChangePassActivity.class);
+        startActivity(intent);
+    }
+
+    public void ClickUsun_Main(View view) {
+        Intent intent = new Intent(MainActivity.this, DeleteActivity.class);
+        startActivity(intent);
+    }
 }

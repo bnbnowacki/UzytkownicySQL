@@ -59,7 +59,7 @@ public class RegistrationActivity extends ActionBarActivity {
         }else{
             SQLOperacje DB = new SQLOperacje(context);
             DB.onInsert(DB, login, pass);
-            Toast.makeText(getApplicationContext(), "Utworzono użytkownika o nazwie "+login, Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), "Utworzono użytkownika o nazwie "+login, Toast.LENGTH_LONG).show();
             finish();
         }
     }

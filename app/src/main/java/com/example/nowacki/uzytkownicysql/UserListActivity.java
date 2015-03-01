@@ -6,11 +6,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+
+import java.util.List;
 
 
 public class UserListActivity extends ActionBarActivity {
-    TextView lista;
+    ListView list;
     SQLiteDatabase db;
     SQLOperacje dbHelper;
 
@@ -18,15 +22,15 @@ public class UserListActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
-        lista=(TextView)findViewById(R.id.textLista);
+        list=(ListView)findViewById(R.id.viewUsers);
+        String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_ID, SQLContract.SQLDane.COLUMN_NAME_NAZWA};
         dbHelper = new SQLOperacje(getApplicationContext());
         db = dbHelper.getReadableDatabase();
-        String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_NAZWA, SQLContract.SQLDane.COLUMN_NAME_HASLO};
-        Cursor c = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, null, null, null, null, null);
-        c.moveToFirst();
-        while(c.moveToNext()){
-            lista.setText(lista.getText()+"Login: "+c.getString(0)+" Hasło: "+c.getString(1)+"\n");
-        }
+        Cursor cursor = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, null, null, null, null, null);
+        cursor.moveToFirst();
+        int[] toViews = {R.id.textView1};
+        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getApplicationContext(),R.layout.list_item_layout, cursor, kolumny, toViews, 0);
+        list.setAdapter(cursorAdapter);
     }
 
 
@@ -51,4 +55,16 @@ public class UserListActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //public void staryKod(){
+        //lista=(TextView)findViewById(R.id.textLista);
+        //dbHelper = new SQLOperacje(getApplicationContext());
+        //db = dbHelper.getReadableDatabase();
+        //String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_NAZWA, SQLContract.SQLDane.COLUMN_NAME_HASLO};
+        //Cursor c = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, null, null, null, null, null);
+        //c.moveToFirst();
+        //while(c.moveToNext()){
+        //    lista.setText(lista.getText()+"Login: "+c.getString(0)+" Hasło: "+c.getString(1)+"\n");
+       // }
+    //}
 }

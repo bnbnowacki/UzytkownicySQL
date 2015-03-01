@@ -7,6 +7,7 @@ import android.provider.BaseColumns;
  */
 public class SQLContract {
     public SQLContract() {}
+    public static String zalogowany="";
 
     public static abstract class SQLDane implements BaseColumns{
         public static final String TABLE_NAME = "uzytkownicy";
