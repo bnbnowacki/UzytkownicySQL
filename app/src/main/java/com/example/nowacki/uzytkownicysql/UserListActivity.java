@@ -23,13 +23,14 @@ public class UserListActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         list=(ListView)findViewById(R.id.viewUsers);
-        String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_ID, SQLContract.SQLDane.COLUMN_NAME_NAZWA};
+        String[] kolumny = {SQLContract.SQLDane.COLUMN_NAME_ID, SQLContract.SQLDane.COLUMN_NAME_NAZWA, SQLContract.SQLDane.COLUMN_NAME_HASLO};
+        String[] kolumna = {SQLContract.SQLDane.COLUMN_NAME_NAZWA, SQLContract.SQLDane.COLUMN_NAME_HASLO};
         dbHelper = new SQLOperacje(getApplicationContext());
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query(SQLContract.SQLDane.TABLE_NAME, kolumny, null, null, null, null, null);
         cursor.moveToFirst();
-        int[] toViews = {R.id.textView1};
-        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getApplicationContext(),R.layout.list_item_layout, cursor, kolumny, toViews, 0);
+        int[] toViews = {R.id.textView1, R.id.textHaslo};
+        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getApplicationContext(),R.layout.list_item_layout, cursor, kolumna, toViews, 0);
         list.setAdapter(cursorAdapter);
     }
 
